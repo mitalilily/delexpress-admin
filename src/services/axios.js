@@ -1,6 +1,32 @@
 import axios from 'axios'
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://delexpress-backend.onrender.com/api'
+const DEFAULT_API_BASE_URL = 'https://delexpress-backend.onrender.com/api'
+
+const getApiBaseUrl = () => {
+  const fallback = DEFAULT_API_BASE_URL.replace(/\/+$/, '')
+
+  try {
+    const rawApiBaseUrl = process.env.REACT_APP_API_BASE_URL
+    if (!rawApiBaseUrl) return fallback
+
+    const candidate = new URL(rawApiBaseUrl, window.location.origin)
+    const currentHost = window.location.hostname
+    const isNetlifyHost = currentHost.endsWith('netlify.app')
+    const pointsBackToFrontend = candidate.hostname === currentHost
+
+    if (isNetlifyHost && pointsBackToFrontend) {
+      return fallback
+    }
+
+    const normalized = candidate.href.replace(/\/+$/, '')
+    if (normalized.endsWith('/api') || normalized.includes('/api/')) return normalized
+    return `${normalized}/api`
+  } catch {
+    return fallback
+  }
+}
+
+const API_BASE_URL = getApiBaseUrl()
 
 const api = axios.create({
   baseURL: API_BASE_URL,
