@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://delexpress-backend.onrender.com/api'
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: API_BASE_URL,
   withCredentials: true, // only if using cookies
 })
 
@@ -31,7 +33,7 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem('refreshToken')
         const res = await axios.post(
-          `${process.env.REACT_APP_API_BASE_URL}/auth/refresh-token`,
+          `${API_BASE_URL}/auth/refresh-token`,
           { refreshToken },
           {
             headers: {
