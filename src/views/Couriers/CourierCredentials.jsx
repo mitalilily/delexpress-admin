@@ -246,7 +246,7 @@ const CourierCredentials = () => {
               <Input
                 value={ekartForm.apiBase}
                 onChange={(e) => setEkartForm((prev) => ({ ...prev, apiBase: e.target.value }))}
-                placeholder="https://api.ekartlogistics.com"
+                placeholder="https://app.elite.ekartlogistics.in"
               />
             </FormControl>
 
@@ -296,7 +296,7 @@ const CourierCredentials = () => {
             </FormControl>
 
             <Text fontSize="xs" color="gray.500">
-              Ekart requires client ID + username/password for token generation. Leave password blank to keep the saved secret.
+              Ekart requires client ID + username/password for token generation. Use the Elite base URL unless Ekart has given you a different endpoint, and leave password blank to keep the saved secret.
             </Text>
 
             <Button
