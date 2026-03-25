@@ -167,6 +167,7 @@ const CourierCredentials = () => {
       </Text>
 
       <Flex gap={4} flexWrap="wrap">
+        {/*
         <Box
           borderWidth="1px"
           borderRadius="lg"
@@ -231,6 +232,7 @@ const CourierCredentials = () => {
             </Button>
           </VStack>
         </Box>
+        */}
 
         <Box borderWidth="1px" borderRadius="lg" p={5} minW="320px" flex="1" maxW="520px">
           <VStack spacing={4} align="stretch">
@@ -310,6 +312,7 @@ const CourierCredentials = () => {
           </VStack>
         </Box>
 
+        {/*
         <Box borderWidth="1px" borderRadius="lg" p={5} minW="320px" flex="1" maxW="520px">
           <VStack spacing={4} align="stretch">
             <Flex justify="space-between" align="center">
@@ -401,6 +404,7 @@ const CourierCredentials = () => {
             </Button>
           </VStack>
         </Box>
+        */}
       </Flex>
     </Flex>
   )
