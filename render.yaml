@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: delexpress-admin
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: NODE_OPTIONS
+        value: --max_old_space_size=4096
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

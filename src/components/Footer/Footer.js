@@ -23,7 +23,7 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} All rights reserved -
         <Link
           color={linkColor}
-          href="https://resonant-piroshki-dcb9ff.netlify.app/"
+          href="https://delexpress-admin.onrender.com/"
           target="_blank"
           fontWeight="semibold"
           ms="6px"

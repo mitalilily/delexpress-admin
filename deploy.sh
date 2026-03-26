@@ -10,7 +10,7 @@
 set +e
 
 # VPS configuration
-VPS_TARGET_PATH="/var/www/meracourierwala/admin-dashboard/build"
+VPS_TARGET_PATH="/var/www/delexpress/admin-dashboard/build"
 
 # Get VPS connection details from argument or environment variables
 if [ -n "$1" ]; then
@@ -45,7 +45,7 @@ echo "🔨 Running build with production environment variables..."
 
 # Set production API URL
 # React apps need REACT_APP_ prefix for environment variables
-export REACT_APP_API_BASE_URL="https://api.meracourierwala.com/api"
+export REACT_APP_API_BASE_URL="https://delexpress-backend.onrender.com/api"
 
 echo "📡 Using production API URL: ${REACT_APP_API_BASE_URL}"
 echo ""

@@ -7,7 +7,7 @@
 
 set +e
 
-VPS_TARGET_PATH="/var/www/meracourierwala/meracourierwala/admin-dashboard"
+VPS_TARGET_PATH="/var/www/delexpress/admin-dashboard"
 
 if [ -n "$1" ]; then
   VPS_CONNECTION="$1"
